@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <p style="color:white;">版本資訊<p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>   
+  <ul>
+    <li style="font-weight:900;">目前版本:{{"v."+nowVersion}}</li>
+    <li style="font-weight:900;">版本歷程:</li>
+    <li *ngFor="let item of versionArray">
+      <span>{{"v"+item.CHG_VER}}</span><br/>
+      <span>{{item.RELEASE_DT+"　　　"}}<span>{{item.MBL_LIST[0].MBL_DESC}}</span></span><br/> 
+      <span *ngFor="let verText of item.MBL_LIST[0].DTL_DESC let recordIndex = index">
+                {{recordIndex+1}}.{{verText}}<br/>
+      </span>
+      <p>
+    </li>
+  </ul>
+</ion-content>
+
+
